@@ -18,6 +18,12 @@ class RockPaperScissorTests: XCTestCase {
         XCTAssertTrue(randomTool.rawValue >= RockPaperScissorGame.GameTool.paper.rawValue
             && randomTool.rawValue <= RockPaperScissorGame.GameTool.scissor.rawValue, "Computer should have anyone of the 3 selectable tools: Rock, Paper, Scissor")
     }
+    
+    func testUserHasOptions() {
+        let game = RockPaperScissorGame()
+        let options = game.provideUserToolOptions()
+        
+        XCTAssertTrue(options.count == 3, "There should be 3 selectable tools: Rock, Paper, Scissor")
     }
     
 }

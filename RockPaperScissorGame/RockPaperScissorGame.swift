@@ -23,4 +23,9 @@ class RockPaperScissorGame: NSObject {
         return challengeTool
     }
     
+    func provideUserToolOptions() -> [GameTool] {
+        let toolOptions = [GameTool.rock, GameTool.paper, GameTool.scissor]
+        return toolOptions
+    }
+    
 }

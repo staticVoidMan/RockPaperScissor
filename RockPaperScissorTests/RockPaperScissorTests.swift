@@ -28,42 +28,52 @@ class RockPaperScissorTests: XCTestCase {
         XCTAssertTrue(options.count == 3, "There should be 3 selectable tools: Rock, Paper, Scissor")
     }
     
-    func testPaperBeatsRock() {
-        let paper = RockPaperScissorGame.GameTool.paper
-        let rock = RockPaperScissorGame.GameTool.rock
-        
-        let isToolBetter = game.toolIsBetter(paper, than: rock)
+    fileprivate func paperBeatsRock() {
+        let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.paper,
+                                             than: RockPaperScissorGame.GameTool.rock)
         XCTAssertTrue(isToolBetter == true, "Paper beats Rock")
     }
     
-    func testScissorBeatsPaper() {
-        let scissor = RockPaperScissorGame.GameTool.scissor
-        let paper = RockPaperScissorGame.GameTool.paper
-        
-        let isToolBetter = game.toolIsBetter(scissor, than: paper)
+    fileprivate func scissorBeatsPaper() {
+        let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.scissor,
+                                             than: RockPaperScissorGame.GameTool.paper)
         XCTAssertTrue(isToolBetter == true, "Scissor beats Paper")
     }
+
     
-    func testRockBeatsScissor() {
-        let rock = RockPaperScissorGame.GameTool.rock
-        let scissor = RockPaperScissorGame.GameTool.scissor
-        
-        let isToolBetter = game.toolIsBetter(rock, than: scissor)
+    fileprivate func rockBeatsScissor() {
+        let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.rock,
+                                             than: RockPaperScissorGame.GameTool.scissor)
         XCTAssertTrue(isToolBetter == true, "Rock beats Scissor")
     }
     
-    func testTieCondition() {
-        let rock = RockPaperScissorGame.GameTool.rock
-        let paper = RockPaperScissorGame.GameTool.paper
-        let scissor = RockPaperScissorGame.GameTool.scissor
-        
-        var isToolBetter = game.toolIsBetter(rock, than: rock)
+    fileprivate func rockTiesRock() {
+        let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.rock,
+                                             than: RockPaperScissorGame.GameTool.rock)
         XCTAssertTrue(isToolBetter == nil, "Rock ties with Rock")
+    }
+    
+    func testPaperBeatsRock() {
+        paperBeatsRock()
+    }
+    
+    func testScissorBeatsPaper() {
+        scissorBeatsPaper()
+    }
+    
+    func testRockBeatsScissor() {
+        rockBeatsScissor()
+    }
+    
+    func testTieCondition() {
+        rockTiesRock()
         
-        isToolBetter = game.toolIsBetter(paper, than: paper)
+        var isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.paper,
+                                             than: RockPaperScissorGame.GameTool.paper)
         XCTAssertTrue(isToolBetter == nil, "Paper ties with Paper")
         
-        isToolBetter = game.toolIsBetter(scissor, than: scissor)
+        isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.scissor,
+                                         than: RockPaperScissorGame.GameTool.scissor)
         XCTAssertTrue(isToolBetter == nil, "Scissor ties with Scissor")
     }
     
@@ -71,16 +81,14 @@ class RockPaperScissorTests: XCTestCase {
         let options = game.provideUserToolOptions()
         
         for toolOption in options {
-            let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.rock, than: toolOption)
-            
             if case RockPaperScissorGame.GameTool.rock = toolOption {
-                XCTAssertTrue(isToolBetter == nil, "Rock ties with Rock")
+                rockTiesRock()
             }
             else if case RockPaperScissorGame.GameTool.paper = toolOption {
-                XCTAssertTrue(isToolBetter == false, "Paper beats Rock")
+                paperBeatsRock()
             }
             else if case RockPaperScissorGame.GameTool.scissor = toolOption {
-                XCTAssertTrue(isToolBetter == true, "Rock beats Scissor")
+                rockBeatsScissor()
             }
         }
     }

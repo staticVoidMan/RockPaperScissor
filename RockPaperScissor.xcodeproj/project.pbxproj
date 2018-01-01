@@ -20,6 +20,8 @@
 		90708F981FF650DD00D4C269 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90708F971FF650DD00D4C269 /* InterfaceController.swift */; };
 		90708F9A1FF650DD00D4C269 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90708F991FF650DD00D4C269 /* ExtensionDelegate.swift */; };
 		90708F9C1FF650DD00D4C269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90708F9B1FF650DD00D4C269 /* Assets.xcassets */; };
+		90708FB11FF651EE00D4C269 /* RockPaperScissorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90708FB01FF651EE00D4C269 /* RockPaperScissorGame.swift */; };
+		90708FB21FF651EE00D4C269 /* RockPaperScissorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90708FB01FF651EE00D4C269 /* RockPaperScissorGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,7 @@
 		90708F991FF650DD00D4C269 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		90708F9B1FF650DD00D4C269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90708F9D1FF650DD00D4C269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90708FB01FF651EE00D4C269 /* RockPaperScissorGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 				90708F681FF650DD00D4C269 /* RockPaperScissor */,
 				90708F871FF650DD00D4C269 /* RockPaperScissor WatchKit App */,
 				90708F961FF650DD00D4C269 /* RockPaperScissor WatchKit Extension */,
+				90708FAF1FF651B700D4C269 /* RockPaperScissorGame */,
 				90708F7D1FF650DD00D4C269 /* RockPaperScissorTests */,
 				90708F671FF650DD00D4C269 /* Products */,
 			);
@@ -181,6 +185,14 @@
 				90708F9D1FF650DD00D4C269 /* Info.plist */,
 			);
 			path = "RockPaperScissor WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		90708FAF1FF651B700D4C269 /* RockPaperScissorGame */ = {
+			isa = PBXGroup;
+			children = (
+				90708FB01FF651EE00D4C269 /* RockPaperScissorGame.swift */,
+			);
+			path = RockPaperScissorGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90708FB11FF651EE00D4C269 /* RockPaperScissorGame.swift in Sources */,
 				90708F7F1FF650DD00D4C269 /* RockPaperScissorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90708F9A1FF650DD00D4C269 /* ExtensionDelegate.swift in Sources */,
+				90708FB21FF651EE00D4C269 /* RockPaperScissorGame.swift in Sources */,
 				90708F981FF650DD00D4C269 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

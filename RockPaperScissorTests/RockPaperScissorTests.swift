@@ -18,8 +18,8 @@ class RockPaperScissorTests: XCTestCase {
     func testGameCanGenerateRandomTool() {
         let randomTool = game.selectRandomTool()
         
-        XCTAssertTrue(randomTool.rawValue >= RockPaperScissorGame.GameTool.paper.rawValue
-            && randomTool.rawValue <= RockPaperScissorGame.GameTool.scissor.rawValue, "Computer should have anyone of the 3 selectable tools: Rock, Paper, Scissor")
+        XCTAssertTrue(randomTool.rawValue >= RockPaperScissorGame.GameTool.rock.rawValue
+            && randomTool.rawValue <= RockPaperScissorGame.GameTool.scissor.rawValue, "Random tool generated: \(randomTool)")
     }
     
     func testUserHasOptions() {

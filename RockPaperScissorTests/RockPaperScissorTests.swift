@@ -11,8 +11,11 @@ import XCTest
 
 class RockPaperScissorTests: XCTestCase {
     
+    lazy var game: RockPaperScissorGame = {
+        return RockPaperScissorGame()
+    }()
+    
     func testGameCanGenerateRandomTool() {
-        let game = RockPaperScissorGame()
         let randomTool = game.selectRandomTool()
         
         XCTAssertTrue(randomTool.rawValue >= RockPaperScissorGame.GameTool.paper.rawValue
@@ -20,7 +23,6 @@ class RockPaperScissorTests: XCTestCase {
     }
     
     func testUserHasOptions() {
-        let game = RockPaperScissorGame()
         let options = game.provideUserToolOptions()
         
         XCTAssertTrue(options.count == 3, "There should be 3 selectable tools: Rock, Paper, Scissor")

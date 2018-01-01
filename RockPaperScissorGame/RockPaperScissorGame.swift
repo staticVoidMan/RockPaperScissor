@@ -28,14 +28,19 @@ class RockPaperScissorGame: NSObject {
         return toolOptions
     }
     
-    func toolIsBetter(_ firstTool: GameTool, than secondTool: GameTool) -> Bool {
-        var isBetter = false
-        if case GameTool.rock = firstTool, case GameTool.scissor = secondTool {
+    func toolIsBetter(_ firstTool: GameTool, than secondTool: GameTool) -> Bool? {
+        var isBetter: Bool? = false
+        
+        if firstTool == secondTool {
+            isBetter = nil
+        }
+        else if case GameTool.rock = firstTool, case GameTool.scissor = secondTool {
             isBetter = true
         }
         else if firstTool.rawValue > secondTool.rawValue {
             isBetter = true
         }
+        
         return isBetter
     }
     

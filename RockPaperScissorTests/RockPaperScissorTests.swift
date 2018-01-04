@@ -39,12 +39,15 @@ class RockPaperScissorTests: XCTestCase {
                                              than: RockPaperScissorGame.GameTool.paper)
         XCTAssertTrue(isToolBetter == true, "Scissor beats Paper")
     }
-
     
-    fileprivate func rockBeatsScissor() {
-        let isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.rock,
+    func rockBeatsScissor() {
+        var isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.rock,
                                              than: RockPaperScissorGame.GameTool.scissor)
         XCTAssertTrue(isToolBetter == true, "Rock beats Scissor")
+        
+        isToolBetter = game.toolIsBetter(RockPaperScissorGame.GameTool.scissor,
+                                             than: RockPaperScissorGame.GameTool.rock)
+        XCTAssertTrue(isToolBetter == false, "Rock beats Scissor")
     }
     
     fileprivate func rockTiesRock() {

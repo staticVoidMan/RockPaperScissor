@@ -1,14 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RockPaperScissor_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="0.5" height="0.5" alignment="center" id="hJb-2K-8Mi"/>
+                        <separator alignment="left" id="Aq0-GX-A4P">
+                            <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <group width="1" height="0.33000000000000002" alignment="left" id="8pY-TF-xbq">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" id="J49-JK-sMs">
+                                    <connections>
+                                        <action selector="btnRock_Action" destination="AgC-eL-Hgc" id="mcn-32-lYx"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" height="1" alignment="left" id="iLq-Ra-NBF">
+                                    <connections>
+                                        <action selector="btnPaper_Action" destination="AgC-eL-Hgc" id="fa1-kn-9gB"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" id="eS8-t6-EUC">
+                                    <connections>
+                                        <action selector="btnScissor_Action" destination="AgC-eL-Hgc" id="Qcl-9v-gCo"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="left" text="0/20" id="5vV-L1-4pL"/>
+                    </items>
+                    <connections>
+                        <outlet property="btnPaper" destination="iLq-Ra-NBF" id="Hc0-QN-8wv"/>
+                        <outlet property="btnRock" destination="J49-JK-sMs" id="fax-EE-1Se"/>
+                        <outlet property="btnScissor" destination="eS8-t6-EUC" id="lJ8-qu-c8U"/>
+                        <outlet property="challengeOptions" destination="8pY-TF-xbq" id="Vm4-0r-3xc"/>
+                        <outlet property="imgVChallengeTool" destination="hJb-2K-8Mi" id="KvG-Ez-F1E"/>
+                        <outlet property="lblWinLevel" destination="5vV-L1-4pL" id="L7v-3J-yEc"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>
